@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponentComponent implements OnInit {
 
+  postTitle = "Article title.";
+  postContent = " Article content.";
+  postLoveIts = " Article loveIts count.";
+  postCreated = " Article creation date."
+
+
   constructor() { }
 
   ngOnInit() {
