@@ -9,6 +9,8 @@ export class AppComponent {
   
   title = 'Our articles : ';
 
+  axios = require('axios');
+
   Posts = [
     {
       title: "Post 1",
