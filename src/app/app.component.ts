@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,10 +10,11 @@ export class AppComponent {
   
   title = 'Our articles : ';
 
-  axios = require('axios');
 
   Posts = [
     {
+      
+      
       title: "Post 1",
       content: "Content 1",
       loveIts: "loveIt's 1",

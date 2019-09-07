@@ -2,10 +2,12 @@
 <div class="wrapPosts" style="border: 2px solid dimgray; padding: 10px; margin-bottom: 10px; margin-top: 10px;">
 
     <p  style="text-align: right"> Posted the {{postCreated | date: 'dd/MM/yy '}} at {{postCreated | date: 'hh:mm'}}</p>
-    <h3  style="text-align: left; font-family: 'Roboto Condensed', sans-serif;">{{postTitle}}</h3>
+    <h3  style="text-align: left; font-family: 'Roboto Condensed', sans-serif;">{{postTitle | async}}</h3>
     <hr>
 
-    <p [ngStyle]="{backgroundColor: getColor()}" style="text-align: justify; font-style: italic; padding: 10px;" >{{postContent}}</p>
+    <p [ngStyle]="{backgroundColor: getColor()}" style="text-align: justify; font-style: italic; padding: 10px;" >{{postContent | async}}</p>
+
+    <img class="x-fluid" src="{{postImage | async}}" style="width: 50%;display: block; margin-left: auto; margin-right: auto;"><br><br>
 
     <div class="wrapBtn" style="display: flex; justify-content: space-around">
            
