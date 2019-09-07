@@ -1,17 +1,19 @@
 
 <div class="wrapPosts" style="border: 2px solid dimgray; padding: 10px; margin-bottom: 10px; margin-top: 10px;">
 
-    <p style="text-align: right">{{postCreated}}</p>
+    <p  style="text-align: right"> Posted the {{postCreated | date: 'dd/MM/yy '}} at {{postCreated | date: 'hh:mm'}}</p>
     <h3  style="text-align: left; font-family: 'Roboto Condensed', sans-serif;">{{postTitle}}</h3>
     <hr>
 
-    <p style="text-align: justify; font-style: italic;" >{{postContent}}</p>
+    <p [ngStyle]="{backgroundColor: getColor()}" style="text-align: justify; font-style: italic; padding: 10px;" >{{postContent}}</p>
 
     <div class="wrapBtn" style="display: flex; justify-content: space-around">
            
-        <button class="btn btn-primary" >Love its</button> 
+        <button class="btn btn-primary" (click)="incLoveIt()" >Love it <span class="badge badge-primary">{{postLoveIts}}</span></button> 
+
+       
         
-        <button class="btn btn-warning"> don't love it. </button>
+        <button class="btn btn-warning" (click)="decLoveIt();"> don't love it. <span class="badge badge-warning">{{postDontLoveIt}}</span> </button>
 
     </div>
     

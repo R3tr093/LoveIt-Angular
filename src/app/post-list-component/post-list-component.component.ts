@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post-list-component',
@@ -9,13 +9,47 @@ export class PostListComponentComponent implements OnInit {
 
   postTitle = "Article title.";
   postContent = " Article content.";
-  postLoveIts = " Article loveIts count.";
-  postCreated = " Article creation date."
+  postLoveIts =  0;
+  postDontLoveIt = 0;
+  postCreated = new Date();
 
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  incLoveIt()
+  {
+     this.postLoveIts = this.postLoveIts + 1;
+  }
+
+  decLoveIt(){
+    
+    this.postDontLoveIt = this.postDontLoveIt + 1;
+
+  }
+
+  getColor(){
+
+    if(Number(this.postLoveIts) > Number(this.postDontLoveIt)){
+
+      return 'lightgreen';
+
+    }
+
+    else if(Number(this.postLoveIts) < Number(this.postDontLoveIt))
+    {
+      return '#db3639'
+    }
+
+    else
+    {
+      return 'antiquewhite'
+    }
+
+    
+
   }
 
 }
